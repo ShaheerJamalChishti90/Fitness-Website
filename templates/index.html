@@ -15,13 +15,13 @@
       <h1 class="logo">SJC FITNESS CLUB</h1>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="/templates/about.html">About</a></li>
-          <li><a href="/templates/services.html">Services</a></li>
-          <li><a href="/templates/contact.html">Contact</a></li>
-          <li><a href="/templates/gallery.html">Gallery</a></li>
-          <li><a href="/templates/login.html">Login</a></li>
-          <li><a href="/templates/register.html">Register</a></li>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>  
       </nav>
     </div>
@@ -33,9 +33,9 @@
       <h1>Welcome to SJC FITNESS CLUB</h1>
       <h6>Your Fitness Journey Starts Here</h6 >
       <div class="buttons">
-        <a href="/templates/services.html" class="btn-outline">View Services</a>
-        <a href="/templates/contact.html" class="btn-outline">Contact Us</a>
-        <a href="/templates/gallery.html" class="btn-outline">Our Gallery</a>
+        <a href="{{ url_for('services') }}" class="btn-outline">Our Services</a>
+        <a href="{{ url_for('contact') }}" class="btn-outline">Contact Us</a>
+        <a href="{{ url_for('gallery') }}" class="btn-outline">Our Gallery</a>
       </div>
     </div>
   </section>

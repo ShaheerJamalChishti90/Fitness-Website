@@ -20,32 +20,48 @@ a {
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 2rem 0;
+  padding: 20px;
 }
 
 header {
   background: #000;
-  padding: 1rem 0;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
-  float: left;
-  font-size: 1.8rem;
-  font-weight: bold;
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-nav {
-  float: right;
+.logo-area {
+  display: flex;
+  flex-direction: column;
 }
+
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+}
+
+/* .slogan {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 5px;
+  text-align: justify;
+} */
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
+
 
 .hero {
   background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
@@ -73,20 +89,43 @@ nav ul {
   border-radius: 5px;
 }
 
-.btn {
-  background: crimson;
-  /* border: 2px solid crimson; */
-  color: crimson;
-}
 
 .btn-outline {  
-  border: 5px solid rgb(0, 0, 0);
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
+  /* background: transparent; */ 
+  border: 5px solid rgb(0, 0, 0); 
   background: transparent;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
+.btn-outline:hover {
+  background: #a92b2b;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.cta .btn1-outline {  
+  /* color: rgb(0, 0, 0); */
+  /* background: transparent; */ 
+  border: 5px;
+  background: transparent;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cta .btn1-outline:hover {
+  background: #180f0f;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(14, 10, 10, 0.5);
+}
+
+
 .section {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .bg-dark {
@@ -105,16 +144,26 @@ nav ul {
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
+  transition: all 0.3s ease;
 }
+
+.card:hover {
+  background: #444;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
 
 .cta {
   text-align: center;
   background: crimson;
-  padding: 3rem 1rem;
+  padding: 1rem;
 }
 
 footer {
   background: #000;
   text-align: center;
-  padding: 1rem 0;
+  padding: 10px 0; /* small vertical padding */
+  font-size: 0.9rem;
+  color: #aaa;
 }

@@ -10,12 +10,13 @@
 
     <section class="hero">
         <div class="hero-content">
-        <h1>Welcome to SJC FITNESS CLUB</h1>
-        <h6>Your Fitness Journey Starts Here</h6 >
+        <h1>CONTACT US - SJC FITNESS CLUB</h1>
+        <h6>Have questions or ready to start your fitness journey?</h6 >
+        <h6>Reach out to us — we’re here to help!</h6>
         <div class="buttons">
-            <a href="/templates/services.html" class="btn-outline">View Services</a>
-            <a href="/templates/index.html" class="btn-outline">Home</a>
-            <a href="/templates/contact.html" class="btn-outline">Contact Us</a>
+            <a href="{{url_for('services')}}" class="btn-outline">Our Services</a>
+            <a href="{{url_for('home')}}" class="btn-outline">Home</a>
+            <a href="{{url_for('about')}}" class="btn-outline">About Us</a>
         </div>
         </div>
     </section>
@@ -44,10 +45,11 @@
     </div>
   </section>
 
+
     <!-- Call to Action -->
   <section id="join" class="cta">
     <h2>Ready to Change Your Life?</h2>
-    <a href="#contact" class="btn">Book a Free Trial</a>
+    <a href="{{url_for('form')}}"><h5 style="color: white;" class="btn1-outline">Click Me!</h5></a>
   </section>
 
   <!-- Contact -->
@@ -56,7 +58,7 @@
       <h2>Contact Us</h2>
       <p>📍 123 Fitness Street, Karachi, Pakistan</p>
       <p>📞 +92-300-1234567</p>
-      <p>✉️ contact@hajiclub.com</p>
+      <p>✉️ contact@sjcclub.com</p>
     </div>
   </section>
 </body>

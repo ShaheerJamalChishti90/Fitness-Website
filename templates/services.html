@@ -10,12 +10,12 @@
 
     <section class="hero">
         <div class="hero-content">
-        <h1>Welcome to SJC FITNESS CLUB</h1>
-        <h6>Your Fitness Journey Starts Here</h6 >
+        <h1>SERVICES - SJC FITNESS CLUB</h1>
+        <h6>Discover a full range of fitness services</h6 >
         <div class="buttons">
-            <a href="/templates/services.html" class="btn-outline">View Services</a>
-            <a href="/templates/index.html" class="btn-outline">Home</a>
-            <a href="/templates/contact.html" class="btn-outline">Contact Us</a>
+            <a href="{{ url_for('about')}}" class="btn-outline">About us</a>
+            <a href="{{ url_for('home')}}" class="btn-outline">Home</a>
+            <a href="{{url_for('contact')}}" class="btn-outline">Contact Us</a>
         </div>
         </div>
     </section>
@@ -23,7 +23,8 @@
       <!-- Classes -->
   <section id="classes" class="section bg-dark">
     <div class="container">
-      <h2>Our Classes</h2>
+      <h1>OUR SERVICES</h1>
+      <h5>At SJC FITNESS CLUB, we offer a wide range of fitness services mentioned below including personal coaching, and more — all designed to help you achieve your goals</h5>
       <div class="grid">
         <div class="card">Bodybuilding</div>
         <div class="card">Cardio Training</div>
