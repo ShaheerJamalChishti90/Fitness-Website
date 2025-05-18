@@ -40,12 +40,88 @@
     </div>
   </section>
 
+<!-- Chatbot HTML -->
+  <div class="chatbot-toggle" onclick="toggleChatbot()">💬</div>
+
+  <div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header">
+      <h4>Ask SJC Bot</h4>
+      <span onclick="toggleChatbot()">✖</span>
+    </div>
+    <div class="chatbot-body" id="chat-body">
+      <div class="bot-msg">Hi! How can I help you?</div>
+      <div class="faq-buttons">
+        <button onclick="handleFAQ('What are your gym timings?')">Gym Timings</button>
+        <button onclick="handleFAQ('What is the monthly membership fee?')">Membership Fee</button>
+        <button onclick="handleFAQ('Do you offer personal training?')">Personal Training</button>
+        <button onclick="handleFAQ('Where are you located?')">Location</button>
+      </div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="user-input" placeholder="Type your question..." onkeydown="checkEnter(event)">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 SJC Club. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- JS for the backend working of Chatbot --> 
+  <script>
+    const responses = {
+      "what are your gym timings?": "We’re open from 6 AM to 10 PM, Monday to Saturday.",
+      "what is the monthly membership fee?": "Our monthly membership fee is PKR 5,000.",
+      "do you offer personal training?": "Yes, we offer personal training packages tailored to your goals.",
+      "where are you located?": "We are located near XYZ Road, Karachi."
+    };
+
+    function toggleChatbot() {
+      const chatbot = document.getElementById("chatbot");
+      chatbot.style.display = chatbot.style.display === "flex" ? "none" : "flex";
+    }
+
+    function handleFAQ(question) {
+      addMessage("user", question);
+      botReply(question.toLowerCase());
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const question = input.value.trim();
+      if (question) {
+        addMessage("user", question);
+        botReply(question.toLowerCase());
+        input.value = "";
+      }
+    }
+
+    function checkEnter(e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    }
+
+    function addMessage(type, text) {
+      const chatBody = document.getElementById("chat-body");
+      const msg = document.createElement("div");
+      msg.className = type === "user" ? "user-msg" : "bot-msg";
+      msg.textContent = text;
+      chatBody.appendChild(msg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function botReply(question) {
+      if (responses[question]) {
+        setTimeout(() => addMessage("bot", responses[question]), 600);
+      } else {
+        setTimeout(() => addMessage("bot", "Sorry, I can only answer some common questions for now."), 600);
+      }
+    }
+  </script>
 
 </body>
 </html>
